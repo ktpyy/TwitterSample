@@ -4,26 +4,35 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="189" id="KGk-i7-Jjw" customClass="TweetTableViewCell" customModule="TwitterSample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="296" id="KGk-i7-Jjw" customClass="TweetTableViewCell" customModule="TwitterSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="296"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="296"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onw-ZY-nhU">
-                        <rect key="frame" x="20" y="20" width="14" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onw-ZY-nhU">
+                        <rect key="frame" x="15" y="20" width="14" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiu-1N-DcA">
-                        <rect key="frame" x="20" y="61" width="43" height="21"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gk0-TO-ZRk">
+                        <rect key="frame" x="10" y="50" width="300" height="196"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOp-b9-Ntc">
+                        <rect key="frame" x="116" y="256" width="88" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,17 +40,31 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Onw-ZY-nhU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="9HH-bv-4Br"/>
-                    <constraint firstItem="qiu-1N-DcA" firstAttribute="top" secondItem="Onw-ZY-nhU" secondAttribute="bottom" constant="20" id="Frf-LZ-t2I"/>
-                    <constraint firstItem="Onw-ZY-nhU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="mTx-9N-Pku"/>
-                    <constraint firstItem="qiu-1N-DcA" firstAttribute="leading" secondItem="Onw-ZY-nhU" secondAttribute="leading" id="qNq-MW-Xjb"/>
+                    <constraint firstAttribute="bottom" secondItem="Gk0-TO-ZRk" secondAttribute="bottom" constant="50" id="Al8-Ud-R0q"/>
+                    <constraint firstItem="tOp-b9-Ntc" firstAttribute="top" secondItem="Gk0-TO-ZRk" secondAttribute="bottom" constant="10" id="B7V-wg-V74"/>
+                    <constraint firstItem="Gk0-TO-ZRk" firstAttribute="top" secondItem="Onw-ZY-nhU" secondAttribute="bottom" constant="10" id="EEQ-61-IYN"/>
+                    <constraint firstItem="Onw-ZY-nhU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-1" id="Oln-U4-739"/>
+                    <constraint firstAttribute="trailing" secondItem="Gk0-TO-ZRk" secondAttribute="trailing" constant="10" id="jgO-TK-IMf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tOp-b9-Ntc" secondAttribute="trailing" constant="100" id="mnq-qx-wWI"/>
+                    <constraint firstItem="Gk0-TO-ZRk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="oUw-Iu-J2a"/>
+                    <constraint firstItem="tOp-b9-Ntc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="100" id="wch-Dr-rJJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="idLabel" destination="Onw-ZY-nhU" id="h6P-tT-6fZ"/>
-                <outlet property="tweetLabel" destination="qiu-1N-DcA" id="1vA-ML-ZAE"/>
+                <outlet property="timeLabel" destination="tOp-b9-Ntc" id="zXZ-S7-qgr"/>
+                <outlet property="tweetTextView" destination="Gk0-TO-ZRk" id="BIo-dM-c92"/>
             </connections>
-            <point key="canvasLocation" x="47.328244274809158" y="71.478873239436624"/>
+            <point key="canvasLocation" x="13.740458015267174" y="108.45070422535211"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

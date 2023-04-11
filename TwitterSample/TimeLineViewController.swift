@@ -13,44 +13,44 @@ class TimeLineViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var tweets: [Tweet] = []
-        let TableView = UITableView()
-
+    let TableView = UITableView()
+    
     override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
-            tableView.dataSource = self
-            tableView.delegate = self
-            self.setupTweet()
-        }
+        super.viewDidLoad()
+        self.title = "タイムライン"
         
-        func setupTweet() {
-            tweets = [Tweet(id: "takashima", body: "本文ツイート", createdAt: Date()), Tweet(id: "kohei", body: "二回目", createdAt: Date()), Tweet(id: "iphone", body: "どこいった", createdAt: Date())]
-        }
+        tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.setupTweet()
     }
+    
+    func setupTweet() {
+        tweets = [Tweet(id: "takashima", body: "本文ツイート　aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", createdAt: Date()), Tweet(id: "kohei", body: "二回目", createdAt: Date()), Tweet(id: "iphone", body: "どこいった", createdAt: Date())]
+    }
+}
 
-    extension TimeLineViewController: UITableViewDataSource {
+extension TimeLineViewController: UITableViewDataSource {
+    // セクションの個数を返す
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    // セクションごとにセルの個数を返す
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count
+    }
+    // セルの中身を返す
+    func tableView(_ tablevView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetTableViewCell", for: indexPath) as! TweetTableViewCell
         
-        // セクションの個数を返す
-        func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
-        // セクションごとにセルの個数を返す
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return tweets.count
-        }
-        // セルの中身を返す
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "TweetTableViewCell", for: indexPath) as! TweetTableViewCell
-            cell.setCell(tweet: tweets[indexPath.row])
-
-            return cell
-        }
-        // セルの高さを返す
-        func tableview(_ tableview: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 200
-        }
+        cell.setCell(tweet: tweets[indexPath.row])
+        return cell
     }
+}
+    // セルの高さを返す
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return 200
+
 
     extension TimeLineViewController: UITableViewDelegate {
         
@@ -63,7 +63,6 @@ class TimeLineViewController: UIViewController {
             return
         }
     }
-        
 
 
 
