@@ -16,6 +16,8 @@ class TweetTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         tweetTextView.isScrollEnabled = false
+        tweetTextView.isEditable = false
+        tweetTextView.isSelectable = false
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

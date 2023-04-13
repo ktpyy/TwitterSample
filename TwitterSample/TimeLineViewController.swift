@@ -31,10 +31,6 @@ class TimeLineViewController: UIViewController {
 }
 
 extension TimeLineViewController: UITableViewDataSource {
-    // セクションの個数を返す
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     // セクションごとにセルの個数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
@@ -47,10 +43,6 @@ extension TimeLineViewController: UITableViewDataSource {
         return cell
     }
 }
-    // セルの高さを返す
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return 200
-
 
     extension TimeLineViewController: UITableViewDelegate {
         
