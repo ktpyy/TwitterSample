@@ -18,7 +18,6 @@ class TimeLineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "タイムライン"
-        
         tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
@@ -43,9 +42,7 @@ extension TimeLineViewController: UITableViewDataSource {
         return cell
     }
 }
-
     extension TimeLineViewController: UITableViewDelegate {
-        
         // セルがタップされた時の処理を書く
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             print("セルがタップされました。")
@@ -55,8 +52,6 @@ extension TimeLineViewController: UITableViewDataSource {
             return
         }
     }
-
-
 
 
 
