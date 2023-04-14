@@ -10,6 +10,7 @@ import Foundation
 
 
 class TimeLineViewController: UIViewController {
+    @IBOutlet weak var customButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var tweets: [Tweet] = []
@@ -17,11 +18,18 @@ class TimeLineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.title = "タイムライン"
         tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
         self.setupTweet()
+        setupButton()
+    }
+    
+    func setupButton() {
+        customButton.layer.cornerRadius = 30
+        customButton.backgroundColor = UIColor(red: 0.39, green: 0.9, blue: 0.89, alpha: 1.0)
     }
     
     func setupTweet() {
@@ -52,7 +60,3 @@ extension TimeLineViewController: UITableViewDataSource {
             return
         }
     }
-
-
-
-
