@@ -15,10 +15,13 @@ class TimeLineViewController: UIViewController {
     
     var tweets: [Tweet] = []
     let TableView = UITableView()
+    let tweetView = TweetView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.addSubview(tweetView)
+        
         self.title = "タイムライン"
         tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
         tableView.dataSource = self
@@ -31,7 +34,6 @@ class TimeLineViewController: UIViewController {
         customButton.layer.cornerRadius = 30
         customButton.backgroundColor = UIColor(red: 0.39, green: 0.9, blue: 0.89, alpha: 1.0)
     }
-    
     func setupTweet() {
         tweets = [Tweet(id: "takashima", body: "本文ツイート　aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", createdAt: Date()), Tweet(id: "kohei", body: "二回目", createdAt: Date()), Tweet(id: "iphone", body: "どこいった", createdAt: Date())]
     }
