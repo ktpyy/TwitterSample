@@ -10,7 +10,6 @@ import UIKit
 class TweetView: UIView {
     @IBOutlet weak var tweetLabel: UILabel!
     
-    
     init() {
         super.init(frame: .zero)
         
