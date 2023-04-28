@@ -10,17 +10,19 @@ import Foundation
 
 
 class TimeLineViewController: UIViewController {
+    @IBAction func tweetButton(_ sender: UIButton) {
+        let tweetVC = TweetViewController()
+        tweetVC.modalPresentationStyle = .fullScreen
+        self.present(tweetVC, animated: true, completion: nil)
+    }
     @IBOutlet weak var customButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var tweets: [Tweet] = []
     let TableView = UITableView()
-    let tweetView = TweetView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.addSubview(tweetView)
         
         self.title = "タイムライン"
         tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
